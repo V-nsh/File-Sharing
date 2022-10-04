@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secur-e-Share</title>
+</head>
+<body>
+    {% if data %}
+    {% for d in data %}
+    <div>Click <a href="/get_file?fid={{d['file_id']}}">here</a> to download this file.</div>
+    {% endfor %}
+    {% endif %}
+</body>
+</html>

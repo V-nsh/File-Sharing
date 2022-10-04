@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    {% if code %}
+    <div class="alert-danger" role="contentinfo">
+        <strong>Share this code to download the file: {{code}}</strong>
+    </div>
+    {% endif %}
+    <ol id="list">
+        {% for d in data %}
+        <li class="row">
+            <h4 class="title">
+                {{ d['filename'] }}
+            </h4>
+
+            <div class="bottom">
+                <a href="/routeFetch?fileID={{ d['file_id'] }}">
+                    <!-- Add button to get link to respective file here. -->
+                    <!-- refer to mongo forum for css -->
+                    <input type="button" className="btn btn-success post-editor-button"
+                    class="btn" value="Get file code">
+                </a>
+            </div>
+
+            <div class="bottom">
+                <a href="/send-files?fileID={{ d['file_id'] }}">
+                    <!-- Add button to send the code to target user. -->
+                    <input type="button" className="btn btn-success post-editor-button"
+                    class="btn" value="send code">
+                </a>
+            </div>
+        </li>
+        {% endfor %}
+    </ol>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<!-- === Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static',filename='script/script.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='script/scripts.js') }}"></script>
+    <!--<title>Login & Registration Form</title>-->
+</head>
+
+<body>
+    {% if logerr %}
+    <div class="alert-danger" role="alert">
+        <strong>{{logerr}}</strong>
+    </div>
+    {% endif %}
+
+    {% if uerr %}
+    <div class="alert-danger" role="alert">
+        <strong>{{uerr}}</strong>
+    </div>
+    {% endif %}
+
+    <!--div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Login</span>
+
+                <form action="{{ url_for("login") }}" method="post">
+                    <div class="input-field">
+                        <input type="text" name="email" placeholder="Enter your email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name="upass" class="password" placeholder="Enter your password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck">
+                            <label for="logCheck" class="text">Remember me</label>
+                        </div>
+
+                        <a href="#" class="text">Forgot password?</a>
+                    </div>
+                    <a href="/login">
+                    <div class="input-field button">
+                        <input type="button" value="Login">
+                    </div>
+                </a>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Not a member?
+                        <a href="/signup" class="text signup-link">Signup Now</a>
+                    </span>
+                </div>
+            </div>
+
+            
+        </div>
+    </div-->
+    <form action='{{ url_for("login") }}' method = "post">
+    <div class="container">
+        <div class="forms>"
+            <span class="title">Login</span>
+        <!--form action='{{ url_for("login") }}' method = "post"-->
+
+            <div class="input-field">
+            <textarea type="text" name="email" placeholder="E-mail" required></textarea>
+            <!--i class="uil uil-envelope icon"></i-->
+            </div>
+
+            <div class="input-field">
+            <textarea type="text" name="upass" placeholder="Password" required></textarea>
+            <!--i class="uil uil-lock icon"></i>
+            <i class="uil uil-eye-slash showHidePw"></i-->
+            </div>
+            
+            <a href="/login">
+                <input type="submit" class="btn" value="Login" />
+            </a>
+            <div class="login-signup">
+                <span class="text">Not a member?
+                    <a href="/signup" class="text signup-link">Signup Now</a>
+                </span>
+            </div>
+        <!--/form-->
+            </div>
+        </div>
+    </form>
+
+    <script src="script.js "></script>
+    <script src="https://smtpjs.com/v3/smtp.js ">
+    </script>
+</body>
+
+</html>

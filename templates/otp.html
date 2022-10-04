@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<body>
+    <form action="{{ url_for("verify") }}" method="post">
+        <div class="input-field">
+            <input type="text" name="otp" id="verification" placeholder="Enter verification code" required>
+            <i class="uil uil-user"></i>
+        </div>
+        <div>{{ name }}</div>
+        <a href="/verify">
+            <input type="submit" class="btn" value="Enter Code">
+        </a>
+    </form>
+</body>
