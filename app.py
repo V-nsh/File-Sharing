@@ -1,12 +1,11 @@
 from genericpath import exists
 from tempfile import tempdir
-from connection import db, users, files, fs, messages
+from connection import db, users, files, fs, messages, shares
 from flask import Flask, render_template, request, redirect, url_for
 import smtplib
 import math, random
 from bson.objectid import ObjectId
 import os
-from PyPDF2 import PdfFileWriter
 
 uid = ""
 currPID = ''
@@ -66,11 +65,11 @@ def generateOTP() :
 def sendMail():
     global otp
     server = smtplib.SMTP_SSL('smtp.gmail.com')
-    server.login("aditya.jaiswal15974@sakec.ac.in", "Aditya@10") #Make a formal email later
+    server.login("vaprohit707@gmail.com", "yrxbmclscuqibiyl") #Make a formal email later
     otp = generateOTP()
     print(otp)
     message = f"{otp}" #add a formal message
-    server.sendmail("aditya.jaiswal15974@sakec.ac.in", umail, message)
+    server.sendmail("vaprohit707@gmail.com", umail, message)
     server.quit()
     return redirect(url_for("verify"))
 
@@ -133,20 +132,16 @@ def insert():
     global uid
     print(request.method)
     if request.method == 'POST':
-        with open(request.form.get('text_f'), "rb") as f:
-            uid = fs.put(f)
-
-        file =  request.form.get("text_f")
+        fi = request.files['text_f']
+        print(fi)
+        uid = fs.put(fi)
+        foo = fi.filename
         doc = {
             "user" : currPID,
-            "filename": file,
+            "filename": foo,
             "file_id": uid
         }
-        print(doc['filename'])
         files.insert_one(doc)
-
-        
-    
     return render_template('home.html')
 
 @app.route('/download', methods=['GET','POST'])
@@ -223,10 +218,12 @@ def route_code():
 
 @app.route('/send_code/<receiver>/<file>')
 def send_code(receiver, file):
+    code = generateOTP()
     doc  = messages.insert_one({
         'file_id': file,
         'from' : currPID,
-        'to' : receiver
+        'to' : receiver,
+        'code': code
     })
     if(doc.inserted_id):
         msg = "Code successfully sent!"

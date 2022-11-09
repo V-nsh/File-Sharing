@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/messages.css') }}">
     <title>Secur-e-Share</title>
 </head>
 <body>
     {% if data %}
     {% for d in data %}
-    <div>Click <a href="/get_file?fid={{d['file_id']}}">here</a> to download this file.</div>
+    <div class="info-msg"> <i class="fa fa-info-circle"></i> Click <a href="/get_file?fid={{d['file_id']}}">here</a> to download this file. Code: {{ d['code'] }}</div>
     {% endfor %}
     {% endif %}
 </body>

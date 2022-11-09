@@ -9,3 +9,4 @@ fs = gridfs.GridFS(db)
 users = db['users']
 files = db['files']
 messages = db['messages']
+shares = db['shares']

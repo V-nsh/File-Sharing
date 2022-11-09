@@ -1,0 +1,13 @@
+.download-container{
+    /* background-color: #4D5057; */
+    background-color: #CE8147;
+    /* background-color: #C8AD55; */
+    padding: 8px;
+    text-align: center;
+    height: 222px;
+    width: 100%;
+}
+
+.downlaod-container h3 {
+    font-size: 30px;
+}

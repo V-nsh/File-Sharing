@@ -22,13 +22,36 @@ body {
     padding: 10px 15px;
   }
   .row {
-    padding: 5px 0;
+    display: flex;
+    border-radius: 8px;
+    /* align-items: center; */
+    /* margin-right: 12px; */
+    padding: 12px 0;
+    background-color: #B5FED9;
+    margin: 8px;
   }
+
+  .row .btn{
+    position: relative;
+    margin: 12px;;
+    left: 80%;
+  }
+
+  .row .btn1{
+    position: relative;
+    left: 200%;
+  }
+
   .bottom {
     display: flex;
     color: grey;
     font-size: 12px;
   }
+
+  .botton{
+    align-items: stretch;
+  }
+
   .timestamp {
     padding-right: 10px;
   }
