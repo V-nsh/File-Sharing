@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page With Light/Dark Mode</title>
+    <link rel="stylesheet" href="profile.css" />
+    <link href="{{ url_for('static',filename='css/profile.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static',filename='script/app.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='script/app.js')}}"></script>
+</head>
+
+<body>
+    <div class="card">
+        <img src="{{ url_for('static',filename='images/img.png')}}" alt="John" style="width:100%">
+        <h1>{{name}}</h1>
+        <!--<p class="title">CEO & Founder, Example</p>-->
+        <p>Email - {{mail}}</p>
+        <a href="#"><i class="fa fa-dribbble"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <!--<p><button><a href="{{url_for('login')}}"></a>Log Out</button></p>-->
+        <a href="{{url_for('login')}}" class="btn">Logout</a>
+      </div>
+
+    <!-- JavaScript Files -->
+
+    <script src="https://kit.fontawesome.com/a81368914c.js "></script>
+    <script src="./app.js "></script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/upload.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/download.css') }}">
+    <title>Secur-e-Share</title>
+</head>
+
+<body>
+
+    {% if msg %}
+    <div class="alert-danger" role="contentinfo">
+        <strong>{{msg}}</strong>
+    </div>
+    {% endif %}
+
+    {% if flg %}
+    <div class="alert-danger" role="contentinfo">
+        <strong>{{flg}}</strong>
+    </div>
+    {% endif %}
+
+    <header>
+        <nav>
+            <div class="visible-title">
+                Secur-e-Share
+            </div>
+
+            <!-- <ul>
+                <li><a href="messages">
+                    Messages
+                </li></a>
+                <li>
+                    <a href="/My-files">
+                        My Files
+                    </a>
+                </li>
+                <li>
+                    <a href="/Shared-Files">
+                        Shared Files
+                    </a>
+                </li>
+                <li>
+                    <a href="/Received-Files">
+                        Received Files
+                    </a>
+                </li>
+            </ul> -->
+        </nav>
+    </header>
+
+    <div class="upload-container">
+        <h1>Upload your files here</h1>
+        <form action="{{ url_for("insert") }}" method="post" enctype="multipart/form-data">
+            <div class="file-upload">
+            <div class="file-upload__label">
+                <input type="file" name="text_f" required>
+            </div>
+
+            <a href="/insert">
+                <input type="submit" value="Upload">
+            </a>
+        </div>
+        </form>
+    </div>
+
+    <div class="download-container">
+        <h3>Download a file using the file-code</h3>
+        <form action="{{ url_for("download") }}" method="post">
+            <div>
+                <input type="text" name="file" id="download" required />
+            </div>
+            <a href="/download">
+                <input type="submit" value="download">
+            </a>    
+        </form>
+    </div>
+
+</body>
+</html>

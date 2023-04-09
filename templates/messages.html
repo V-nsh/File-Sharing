@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/messages.css') }}">
+    <title>Secur-e-Share</title>
+</head>
+<body>
+    {% if sent %}
+    <div class="alert-danger" role="alert">
+        <strong>{{sent}}</strong>
+    </div>
+    {% endif %}
+
+    {% if msg %}
+    <div class="alert-danger" role="alert">
+        <strong>{{msg}}</strong>
+    </div>
+    {% endif %}
+
+    {% if codeSent %}
+    <div class="alert-danger" role="alert">
+        <strong>{{codeSent}}</strong>
+    </div>
+    {% endif %}
+
+    {% if data %}
+    {% for d in data %}
+    <div class="info-msg"> <i class="fa fa-info-circle"></i> A user is trying to share a file with you, click <a href="./redirect-auth?fid={{d['file_id']}}">here</a> to download {{d['filename']}}. Code: <a href="/request-code?fid={{d['file_id']}}&user={{d['from']}}">Click here to get the code.</a></div>
+    {% endfor %}
+    {% endif %}
+
+    {% if reqs %}
+    {% for r in reqs %}
+    <div class="info-msg"> <i class="fa fa-info-circle"></i> A user is asking for the code for the file {{r['filename']}}, <a href="/send-code?fid={{r['file_id']}}&to={{r['to']}}">click here to share code</a>.</div>
+    {% endfor %}
+    {% endif %}
+
+    {% if grs %}
+    {% for g in grs %}
+    <div class="info-msg"> <i class="fa fa-info-circle"></i> Code for the file {{g['filename']}} is: {{g['code']}}</a>.</div>
+    {% endfor %}
+    {% endif %}
+
+</body>
+</html>

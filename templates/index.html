@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page With Light/Dark Mode</title>
+    <!--<link rel="stylesheet" href="style1.css" />-->
+    <!--<script src="./app.js "></script>-->
+    <link href="{{ url_for('static',filename='css/style1.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static',filename='script/script.js')}}" type="text/javascript"></script>
+    <!--&lt;script src=&quot;{{url_for('static', filename='script/script.js')}}&quot;&gt;&lt;/script&gt;-->
+</head>
+
+<body>
+    
+    <main>
+        <div class="big-wrapper light">
+            <script type="text/javascript" src="{{ url_for('static',filename='script/script.js')}}"></script>
+            <img src="{{ url_for('static',filename='images/shape.png')}}" alt="" class="shape" />
+            <header>
+                <div class="container">
+                    <div class="logo">
+                        <!--<img src="./img/logo.png" alt="Logo" /> -->
+                        <img src="{{ url_for('static',filename='images/logo.png')}}" alt="logo" />
+                        <h3>Secure-e-Share</h3>
+                    </div>
+
+                    <div class="links">
+                        <ul>
+                            <li><a href="{{url_for('home')}}">Share File</a></li>
+                            <li><a href="/My-files">My Files</a></li>
+                            <li><a href="/messages">Messages</a></li>
+                            <li><a href="/Shared-Files">Shared File</a></li>
+                            <li><a href="/Received-Files">Recieved File</a></li>
+                            <li><a href="{{url_for('profile')}}">Profile</a></li>
+                            <!-- <li><a href="#">How To Use</a></li> -->
+                             <!--<li><a href="#" class="btn">Sign up</a></li>   //important-->
+                        </ul>
+                    </div>
+                    <div class="bottom-area ">
+                        <div class="container ">
+                            <button id="toggle-btn" class="toggle-btn">
+                      <i class="far fa-moon "></i>
+                                <i class="far fa-sun "></i>
+                                </button>
+                        </div>
+                    </div>
+                    <div class="overlay"></div>
+
+                    <div class="hamburger-menu">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </header>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="showcase-area">
+                <div class="container">
+                    <div class="left">
+                        <div class="big-title">
+                            <h1>Data Leakage,</h1>
+                            <h1>Detection & Prevention with Secured Cloud Storage</h1>
+                        </div>
+                        <p class="text">
+                            Data privacy has always been a top priority in ourself lives and this website is very useful and takes care of the data leakage and prevent it and also make a secured storage for safe sharing as data leakage is the reason many multi-national company have faced huge loss of millions of dollar
+                        </p>
+                        <!-- <div class="cta">
+                            <a href="#" class="btn">Get started</a>
+                        </div> -->
+                    </div>
+
+                    <div class="right">
+                        <!--<img src="./img/logo.jpeg" alt="Person Image" class="person" />-->
+                        <img src="{{ url_for('static',filename='images/logo.jpeg')}}" alt="Person Image" class="person" />
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="showcase-area">
+                <div class="container">
+                    <div class="right">
+                        <div class="big-title">
+                            <h1>About,</h1>
+                            <h1>Secure-e-Share </h1>
+                        </div>
+                        <p class="text">
+                            Secur-e-Share is asafe 2 layer encryptedtop proiority file sharing platform and has afully encrypted environment that ensures usersprivacy is not compromised
+                        </p>
+                        <!-- <div class="cta">
+                            <a href="#" class="btn">Get started</a>
+                        </div> -->
+                    </div>
+
+                    <div class="left">
+                        <img src="{{ url_for('static',filename='images/img1.jpg')}}" alt="Person Image" class="person" />
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="showcase-area">
+                <div class="container">
+                    <div class="right">
+                        <div class="big-title">
+                            <h1>About,</h1>
+                            <h1>Secure-e-Share </h1>
+                        </div>
+                        <p class="text">
+                            Secur-e-Share is a safe 2 layer encryptedtop proiority file sharing platform and has afully encrypted environment that ensures usersprivacy is not compromised
+                        </p>
+                        <!-- <div class="cta">
+                            <a href="#" class="btn">Get started</a>
+                        </div> -->
+                    </div>
+
+                    <div class="left">
+                        <img src="{{ url_for('static',filename='images/img2.jpg')}}" alt="Person Image" class="person" />
+                    </div>
+                </div>
+            </div>
+ <br>
+ <br>
+ <br>
+ <br>
+            <!--<div class="counter">
+                <div class="success">
+                    <div class="counter-box">
+                        <i class="far fa-file"></i>
+                        <h2>111</h2>
+                        <h4>SucessFull Sharing</h4>
+                    </div>
+                </div>
+                <div class=" success ">
+                    <div class="counter-box">
+                        <i class="far fa-file"></i>
+                        <h2>111</h2>
+                        <h4>SucessFull Sharing</h4>
+                    </div>
+                </div>
+            </div> -->
+            <section class="main-content">
+                <div>
+                  <h1>Sucessfull transfer</h1>
+                  {% if success %}
+                  <p>{{success}}</p>
+                  {%  endif  %}
+                </div>
+                <div class="line"></div>
+                <div>
+                  <h1>Data leakage detection</h1>
+                  {% if detects %}
+                  <p>{{detects}}</p>
+                  {%  endif  %}
+                </div>
+              </section>
+
+        </div>
+    </main>
+
+    <!-- JavaScript Files -->
+    <script type="text/javascript" src="{{ url_for('static',filename='script/script.js')}}"></script>
+    <script src="https://kit.fontawesome.com/a81368914c.js "></script>
+    <!--<script src="./script.js "></script>-->
+</body>
+
+</html>

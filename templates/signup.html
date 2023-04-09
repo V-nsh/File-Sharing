@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<!-- === Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static',filename='script/script.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='script/scripts.js') }}"></script>
+    <!--<title>Login & Registration Form</title>-->
+</head>
+<body>
+
+    {% if perr %}
+    <div class="alert-danger" role="alert">
+        <strong>{{perr}}</strong>
+    </div>
+    {% endif %}
+
+    {% if exist %}
+    <div class="alert-danger" role="alert">
+        <strong>{{exist}}</strong>
+    </div>
+    {% endif %}
+
+    {% if oterr %}
+    <div class="alert-danger" role="alert">
+        <strong>{{oterr}}</strong>
+    </div>
+    {% endif %}
+
+    <div class="container">
+        <div class="forms">
+            <!-- Registration Form -->
+            <div class="form signup" >
+                <span class="title">Registration</span>
+
+                <form action="{{ url_for("signup") }}" method="post">
+                    <div class="input-field">
+                        <input type="text" name="uname" placeholder="Enter your name" required>
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="email" name="umail" placeholder="Enter your email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" name="upass" placeholder="Create a password" required>
+                        <i class="uil uil-lock icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" name="upass1" placeholder="Confirm a password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <a href="/signup">
+                    <div class="input-field button">
+                        <input type="submit" id="sendmail" value="Signup">
+                    </div>
+                    </a>
+                </form>
+
+                <div class=" login-signup ">
+                    <span class="text ">Already a member?
+                        <a href="/login" class="text login-link ">Login Now</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js "></script>
+    <script src="https://smtpjs.com/v3/smtp.js ">
+    </script>
+</body>
+</html>

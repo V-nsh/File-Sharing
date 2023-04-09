@@ -1,0 +1,57 @@
+body {
+    margin: 10px 60px;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  h1,
+  h4,
+  ol {
+    margin: 0;
+  }
+  p {
+    margin: 5px 0;
+  }
+  .top-bar {
+    background-color: skyblue;
+    padding: 0 40px;
+  }
+  .main {
+    background-color: #f6f6ef;
+    padding: 10px 15px;
+  }
+  .row {
+    display: flex;
+    border-radius: 8px;
+    /* align-items: center; */
+    /* margin-right: 12px; */
+    padding: 12px 0;
+    background-color: #B5FED9;
+    margin: 8px;
+  }
+
+  .row .btn{
+    position: relative;
+    margin: 12px;;
+    left: 80%;
+  }
+
+  .row .btn1{
+    position: relative;
+    left: 200%;
+  }
+
+  .bottom {
+    display: flex;
+    color: grey;
+    font-size: 12px;
+  }
+
+  .botton{
+    align-items: stretch;
+  }
+
+  .timestamp {
+    padding-right: 10px;
+  }

@@ -1,0 +1,14 @@
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
+
+.info-msg{
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 3px 3px 3px 3px;
+    color: #059;
+    background-color: #BEF;
+}
+
+/* .info-msg {
+    color: #059;
+    background-color: #BEF;
+  } */
