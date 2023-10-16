@@ -24,7 +24,7 @@
                     <div class="logo">
                         <!--<img src="./img/logo.png" alt="Logo" /> -->
                         <img src="{{ url_for('static',filename='images/logo.png')}}" alt="logo" />
-                        <h3>Secure-e-Share</h3>
+                        <h3>File Sharing</h3>
                     </div>
 
                     <div class="links">
@@ -62,11 +62,10 @@
                 <div class="container">
                     <div class="left">
                         <div class="big-title">
-                            <h1>Data Leakage,</h1>
-                            <h1>Detection & Prevention with Secured Cloud Storage</h1>
+                            <h1>File Sharing Webapp</h1>
                         </div>
                         <p class="text">
-                            Data privacy has always been a top priority in ourself lives and this website is very useful and takes care of the data leakage and prevent it and also make a secured storage for safe sharing as data leakage is the reason many multi-national company have faced huge loss of millions of dollar
+                            A file sharing webapp based on MongoDb gridfs and flask framework.
                         </p>
                         <!-- <div class="cta">
                             <a href="#" class="btn">Get started</a>
@@ -75,97 +74,10 @@
 
                     <div class="right">
                         <!--<img src="./img/logo.jpeg" alt="Person Image" class="person" />-->
-                        <img src="{{ url_for('static',filename='images/logo.jpeg')}}" alt="Person Image" class="person" />
-                    </div>
-                </div>
-            </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="showcase-area">
-                <div class="container">
-                    <div class="right">
-                        <div class="big-title">
-                            <h1>About,</h1>
-                            <h1>Secure-e-Share </h1>
-                        </div>
-                        <p class="text">
-                            Secur-e-Share is asafe 2 layer encryptedtop proiority file sharing platform and has afully encrypted environment that ensures usersprivacy is not compromised
-                        </p>
-                        <!-- <div class="cta">
-                            <a href="#" class="btn">Get started</a>
-                        </div> -->
-                    </div>
-
-                    <div class="left">
                         <img src="{{ url_for('static',filename='images/img1.jpg')}}" alt="Person Image" class="person" />
                     </div>
                 </div>
             </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="showcase-area">
-                <div class="container">
-                    <div class="right">
-                        <div class="big-title">
-                            <h1>About,</h1>
-                            <h1>Secure-e-Share </h1>
-                        </div>
-                        <p class="text">
-                            Secur-e-Share is a safe 2 layer encryptedtop proiority file sharing platform and has afully encrypted environment that ensures usersprivacy is not compromised
-                        </p>
-                        <!-- <div class="cta">
-                            <a href="#" class="btn">Get started</a>
-                        </div> -->
-                    </div>
-
-                    <div class="left">
-                        <img src="{{ url_for('static',filename='images/img2.jpg')}}" alt="Person Image" class="person" />
-                    </div>
-                </div>
-            </div>
- <br>
- <br>
- <br>
- <br>
-            <!--<div class="counter">
-                <div class="success">
-                    <div class="counter-box">
-                        <i class="far fa-file"></i>
-                        <h2>111</h2>
-                        <h4>SucessFull Sharing</h4>
-                    </div>
-                </div>
-                <div class=" success ">
-                    <div class="counter-box">
-                        <i class="far fa-file"></i>
-                        <h2>111</h2>
-                        <h4>SucessFull Sharing</h4>
-                    </div>
-                </div>
-            </div> -->
-            <section class="main-content">
-                <div>
-                  <h1>Sucessfull transfer</h1>
-                  {% if success %}
-                  <p>{{success}}</p>
-                  {%  endif  %}
-                </div>
-                <div class="line"></div>
-                <div>
-                  <h1>Data leakage detection</h1>
-                  {% if detects %}
-                  <p>{{detects}}</p>
-                  {%  endif  %}
-                </div>
-              </section>
 
         </div>
     </main>
