@@ -437,10 +437,10 @@ def download_file(fid):
     out = fs.get(ObjectId(fid)).read()
     # OUT IS THE OUTPUT FILE, DECRYPT IS BEFORE DOWNLOADING 
     # --------------------DECRYPT HERE---------------------
-    if not os.path.exists('C:/secur-e-share'):
-        os.makedirs('C:/secur-e-share')
+    if not os.path.exists('C:/file-sharing'):
+        os.makedirs('C:/file-sharing')
 
-    path = os.path.join('C:/secur-e-share', target["filename"])
+    path = os.path.join('C:/file-sharing', target["filename"])
     output = open(path, "wb")
 
     output.write(out)
